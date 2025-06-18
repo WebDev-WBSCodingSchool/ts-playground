@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TS Playground</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script type="module">
+      import './src/style.css';
+      import consoleToDOM from '@weyvern/console-to-dom';
+      consoleToDOM({
+        output: document.body,
+        classNames: {
+          outputLine: 'console-line',
+          log: 'console-log',
+          warn: 'console-warn',
+          info: 'console-info',
+          error: 'console-error'
+        },
+        showLineNumber: true
+      });
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
