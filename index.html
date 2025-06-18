@@ -19,8 +19,25 @@
           info: 'console-info',
           error: 'console-error'
         },
-        showLineNumber: true
+        showLineNumber: true,
+        offset: 16
       });
+      window.onerror = function (message, source, lineno, colno, error) {
+        if (error instanceof Error) {
+          console.error(`${error.name}: ${error.message}`);
+        } else {
+          console.error('Error:', message);
+        }
+      };
+      window.onunhandledrejection = function (event) {
+        event.preventDefault();
+        const reason = event.reason;
+        if (reason instanceof Error) {
+          console.error(`${reason.name}: ${reason.message}`);
+        } else {
+          console.error('Unhandled rejection:', reason);
+        }
+      };
     </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
