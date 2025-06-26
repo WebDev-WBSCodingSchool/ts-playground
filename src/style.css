@@ -10,7 +10,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
     font-weight: 500;
-    @apply bg-gray-100 dark:bg-gray-800 p-2 rounded mb-1 flex justify-between;
+    @apply bg-gray-100 dark:bg-gray-800 p-2 rounded mb-1 flex justify-between overflow-x-scroll;
   }
   .console-log {
     @apply text-gray-800 dark:text-gray-200;
